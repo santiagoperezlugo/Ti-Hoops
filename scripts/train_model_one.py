@@ -5,22 +5,27 @@ import matplotlib.pyplot as plt
 import os
 import sys
 sys.path.append('/Users/santi/Desktop/Hoops-Analytics') 
-from data import prepare_data as pd
+from data import convert_data as pd
 from model import model_one as mo
 from pathlib import Path
+
+
+#PROTOTYPE MODEL ONE
+
+
+
 
 # Load data
 test_data, train_data = pd.finalizeTensors()
 
 
-input_size = 50  # Update this with the actual number of input features
+input_size = 44
 model_0 = mo.NBA_Score_Predictor_Model(input_size)
 
-# Define optimizer and loss functions
 optimizer = optim.Adam(model_0.parameters(), lr=0.0001)
-criterion = nn.L1Loss()
+criterion = nn.SmoothL1Loss()
 
-epochs = 5000
+epochs = 10000
 for epoch in range(epochs):
     model_0.train()
     total_train_loss = 0.0

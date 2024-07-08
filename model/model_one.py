@@ -9,9 +9,11 @@ class NBA_Score_Predictor_Model(nn.Module):
         self.layers = nn.Sequential(
             nn.Linear(in_features, 128),
             nn.ReLU(),
+            nn.Dropout(0.5),
             nn.Linear(128, 64),
             nn.ReLU(),
-            nn.Linear(64, 2)  # Outputs two scores: home and away
+            nn.Linear(64, 2)
+            
         )
     
     def forward(self, x):
