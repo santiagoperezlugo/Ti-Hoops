@@ -1,9 +1,6 @@
 import mysql.connector
 from nba_api.stats.static import teams
 from nba_api.stats.endpoints import leaguegamefinder, playergamelogs, leaguegamelog
-import os
-import sys
-sys.path.append('/Users/santi/Desktop/Hoops-Analytics') 
 from data import fetch_data as fd
 from config import sql_setup as sql
 from data import load_data as load
@@ -12,17 +9,20 @@ from scripts import train_model_two as tm
 import numpy as np
 import pandas as pd
 
+import os
+
 def connect_to_db():
-    host = '127.0.0.1'
-    user = 'root'
-    password = 'nfl020504'
-    database = 'nba_data'
+    host = os.getenv('DB_HOST', '127.0.0.1')
+    user = os.getenv('DB_USER', 'root')
+    password = os.getenv('DB_PASSWORD', 'your_default_password')
+    database = os.getenv('DB_NAME', 'nba_data')
 
     try:
         return mysql.connector.connect(host=host, user=user, password=password, database=database)
     except mysql.connector.Error as err:
         print(f"Error connecting to the database: {err}")
         return None
+
 
 
 def main():
