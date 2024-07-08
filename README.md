@@ -1,6 +1,6 @@
 # Hoops-Analytics
 
-<img width="1469" alt="Screenshot 2024-07-08 at 7 53 19 PM" src="https://github.com/santiagoperezlugo/Hoops-Analytics/assets/144164736/f34f4d9b-a06b-4820-89de-8c1feb9704b3">
+<img width="1469" alt="Screenshot 2024-07-08 at 7 54 00 PM" src="https://github.com/santiagoperezlugo/Hoops-Analytics/assets/144164736/c8b66fd4-efbf-4990-b2c4-ad0c30ae5c47">
 
 ## Introduction
 This project is designed to analyze NBA game data to predict outcomes and player performances using statistical modeling and machine learning. It utilizes Python for data processing and machine learning, and MySQL for data storage.
