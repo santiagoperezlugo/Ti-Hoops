@@ -3,8 +3,6 @@ from torch import nn
 import torch.optim as optim
 import matplotlib.pyplot as plt
 import os
-import sys
-sys.path.append('/Users/santi/Desktop/Hoops-Analytics') 
 from data import convert_data as pd
 from model import model_two as mo
 from pathlib import Path
@@ -16,7 +14,7 @@ def train_model(train_data, test_data):
     optimizer = optim.Adam(model_two.parameters(), lr=0.001, weight_decay=0.01)
     criterion = nn.SmoothL1Loss()
 
-    epochs = 100
+    epochs = 70
     for epoch in range(epochs):
         train_correct_predictions = 0
         train_total_predictions = 0
@@ -60,7 +58,7 @@ def train_model(train_data, test_data):
         train_accuracy = (train_correct_predictions / train_total_predictions) * 100
         test_accuracy = (test_correct_predictions / test_total_predictions) * 100
         
-        if epoch % 5 == 0:
+        if epoch % 1 == 0:
             print(f'Epoch: {epoch}, Train Accuracy: {train_accuracy:.2f}%, Train Loss: {average_train_loss:.3f}, Test Loss: {average_test_loss:.3f}, Test Accuracy: {test_accuracy:.2f}%')
 
 #     # MODEL_PATH = Path("saved_models") 
@@ -68,7 +66,7 @@ def train_model(train_data, test_data):
 
 #     # MODEL_NAME = "model_two.pth"
 #     # MODEL_SAVE_PATH = MODEL_PATH / MODEL_NAME
-# \
+# 
 #     # print(f"Saving model to: {MODEL_SAVE_PATH}")
 #     # torch.save(model_two.state_dict(), MODEL_SAVE_PATH) 
 
