@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 import os
 import sys
 sys.path.append('/Users/santi/Desktop/Hoops-Analytics') 
-from data import prepare_data as pd
+from data import data_to_tensors as pd
 from model import model_one as mo
 from pathlib import Path
 

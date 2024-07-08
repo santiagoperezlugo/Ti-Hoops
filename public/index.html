@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ti's Hooping Simulator</title>
+    <link rel="stylesheet" href="/CSS/index.css">
+    <link href="https://fonts.googleapis.com/css2?family=Tourney:wght@100;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Luckiest Guy:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+</head>
+<body>
+    <div class = "title">
+        <h1> Ti's Hooping Simulator</h1>
+        <span class = "welcome">Welcome to Ti's Hooping Simulator!</span>
+        <p> Simply input any 5 players with any season they played in on each team, and let the AI do the rest!  </p>
+        <p> This model correctly predicted the outcome of 2/3 nba games with over 47 years of game data! </p>
+        <p> Example input: <br>
+            <div class="highlighted">LeBron James | 2022-23 | LAL</div>
+        </p>
+    </div>
+
+    <div class = basketball_court>
+        <img src = "/images/basketball_court.jpeg" alt = "Basketball Court">
+    </div>
+
+    <div class = teams-container>
+        <div class="team_one">
+            <h2>HOME TEAM</h2>
+            <div class = buttons>
+                <button onclick="fillHomeSeason()">Season For All</button>
+            <button onclick="fillHomeTeam()">Team For All</button>
+            </div>
+            <div class = player>
+                <input type="text" id="player1" placeholder="Player 1">
+                <input type="text" id="season1" placeholder="Season">
+                <input type="text" id="team1" placeholder="Team Abbreviation">
+            </div>
+            <div class = player>
+                <input type="text" id="player2" placeholder="Player 2">
+                <input type="text" id="season2" placeholder="Season">
+                <input type="text" id="team2" placeholder="Team Abbreviation">
+            </div>
+            <div class = player>
+                <input type="text" id="player3" placeholder="Player 3">
+                <input type="text" id="season3" placeholder="Season">
+                <input type="text" id="team3" placeholder="Team Abbreviation">
+            </div>
+            <div class = player>
+                <input type="text" id="player4" placeholder="Player 4">
+                <input type="text" id="season4" placeholder="Season">
+                <input type="text" id="team4" placeholder="Team Abbreviation">
+            </div>
+            <div class = player>
+                <input type="text" id="player5" placeholder="Player 5">
+                <input type="text" id="season5" placeholder="Season">
+                <input type="text" id="team5" placeholder="Team Abbreviation">
+            </div>
+            <div class = clearAll>
+                <button onclick="clearAll()">Clear All</button>
+            </div>
+        </div>
+        
+        <div class="team_two">
+            <h2>AWAY TEAM</h2>
+            <div class = buttons>
+                <button onclick="fillAwaySeason()">Season For All</button>
+                <button onclick="fill_Away_Team()">Team For All</button>
+            </div>
+            
+            <div class = player>
+                <input type="text" id="player6" placeholder="Player 6">
+                <input type="text" id="season6" placeholder="Season">
+                <input type="text" id="team6" placeholder="Team Abbreviation">
+            </div>
+            <div class = player>
+                <input type="text" id="player7" placeholder="Player 7">
+                <input type="text" id="season7" placeholder="Season">
+                <input type="text" id="team7" placeholder="Team Abbreviation">
+            </div>
+            <div class = player>
+                <input type="text" id="player8" placeholder="Player 8">
+                <input type="text" id="season8" placeholder="Season">
+                <input type="text" id="team8" placeholder="Team Abbreviation">
+            </div>
+            <div class = player>
+                <input type="text" id="player9" placeholder="Player 9">
+                <input type="text" id="season9" placeholder="Season">
+                <input type="text" id="team9" placeholder="Team Abbreviation">
+            </div>
+            <div class = player>
+                <input type="text" id="player10" placeholder="Player 10">
+                <input type="text" id="season10" placeholder="Season">
+                <input type="text" id="team10" placeholder="Team Abbreviation">
+            </div>
+            <div class = clearAll>
+                <button onclick="clearAll()">Clear All</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="submit_button">
+        <button id="simulateGame">Simulate Game <div id="winnerDisplay"></div> </button>
+    </div>
+
+    <div class = showResults>
+        <div id="resultsDisplay"></div> 
+    </div>
+
+    <div class = new_game>
+        <button id="freshStart">Fresh Start</button>
+        <button id="editTeams">Edit Teams</button>
+    </div>
+    <button onclick="autofillTestData()">Autofill Test Data</button>
+    
+
+    <div class = "moreInfo">
+        This machine model was trained with PyTorch using 47 years of NBA game data pulled from a swar/nba_api.
+        It uses individual player stats as well as team stats to predict not only the outcome of the game, but the scores as well.
+        The model is able to predict games to within 8 points difference on average.
+        It also has a 66% accuracy rate in predicting the winner of the game.
+        <br><br>
+        Throughout the development of the model, continuous feedback loops were established where the model's outputs were compared against actual game results, providing concrete data points to measure effectiveness and areas for improvement.
+        I experimented with various parameters and features to optimize its predictive accuracy, adding and removing certain statistics. 
+        I also tested the model's response to anomalous data, such as outlier performances and fine-tuned the model to negate these as much as possible.
+    </div>
+
+    <div class = "footer">
+        <p>Created by Santiago Perez Lugo    
+            <a href="https://www.linkedin.com/in/santiago-perezlugo">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/santiagoperezlugo">
+                <i class="fab fa-github"></i>
+            </a>
+        </p>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const simulateButton = document.getElementById('simulateGame');
+            const winnerDisplay = document.getElementById('winnerDisplay');
+            const resultsDisplay = document.getElementById('resultsDisplay');
+    
+            if(simulateButton && winnerDisplay && resultsDisplay) {
+                simulateButton.addEventListener('click', function() {
+                    
+                    const homeTeam = {};
+                    const awayTeam = {};
+    
+                    for (let i = 1; i <= 5; i++) {
+                        homeTeam[document.getElementById('player' + i).value] = {
+                            season: document.getElementById('season' + i).value,
+                            team: document.getElementById('team' + i).value
+                        };
+                    }
+
+                    for (let i = 6; i <= 10; i++) {
+                        awayTeam[document.getElementById('player' + i).value] = {
+                            season: document.getElementById('season' + i).value,
+                            team: document.getElementById('team' + i).value
+                        };
+                    }
+
+                    const data = { homeTeam, awayTeam };
+
+                    fetch('/simulate', {
+                        method: 'POST',
+                        headers: {'Content-Type': 'application/json'},
+                        body: JSON.stringify(data)
+                    })
+                    .then(response => response.json())
+                    .then(result => {
+                        console.log('Success:', result);
+                        if (result.success) {
+                            const resultsHtml = `<div class="home-score">${result.homeScore}</div>
+                                                <div class="away-score">${result.awayScore}</div>`;
+                            const resultsDiv = document.getElementById('resultsDisplay');
+                            resultsDiv.className = '';
+                            resultsDiv.innerHTML = resultsHtml;
+
+                            
+
+
+                            if (result.homeScore > result.awayScore) {
+                                simulateButton.classList.add("winner-home");
+                                simulateButton.innerHTML = '<div id="winnerDisplay">Home Team Wins!</div>';
+                            } else if (result.homeScore < result.awayScore) {
+                                simulateButton.classList.add("winner-away");
+                                simulateButton.innerHTML = '<div id="winnerDisplay">Away Team Wins!</div>';
+                            }
+
+                        } else {
+                            document.getElementById('resultsDisplay').innerHTML = 'Simulation failed: ' + result.message;
+                            document.getElementById('resultsDisplay').className = 'result-error';
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        const errorMessage = error.message ? `Error fetching results: ${error.message}` : 'Error fetching results.';
+                        document.getElementById('resultsDisplay').innerHTML = errorMessage;
+                        document.getElementById('resultsDisplay').className = 'result-error';
+                    });
+
+                });
+            }
+        });
+
+        function fillHomeSeason() {
+            var season = document.getElementById('season1').value;
+            for (var i = 2; i <= 5; i++) {
+                document.getElementById('season' + i).value = season;
+            }
+        }
+        function fillHomeTeam() {
+            var teamName = document.getElementById('team1').value;
+            for (var i = 2; i <= 5; i++) {
+                document.getElementById('team' + i).value = teamName;
+            }
+        }
+        function fillAwaySeason() {
+            var season = document.getElementById('season6').value;
+            for (var i = 7; i <= 10; i++) {
+                document.getElementById('season' + i).value = season;
+            }
+        }
+        function fill_Away_Team(){
+            var teamName = document.getElementById('team6').value;
+            for (var i =7; i <=10; i++){
+                document.getElementById('team' + i).value = teamName;
+            }
+        }
+        function clearAll() {
+            for (var i = 1; i <= 10; i++) {
+                document.getElementById('player' + i).value = '';
+                document.getElementById('season' + i).value = '';
+                document.getElementById('team' + i).value = '';
+            }
+        }
+        document.getElementById('freshStart').addEventListener('click', function() {
+        // Reset player inputs
+        document.querySelectorAll('.player input').forEach(input => {
+            input.value = '';
+        });
+        // Clear results and winner display
+        document.getElementById('resultsDisplay').innerHTML = '';
+        document.getElementById('winnerDisplay').innerHTML = '';
+
+        // Reset the "Simulate Game" button to its initial state
+        const simulateButton = document.getElementById('simulateGame');
+        simulateButton.innerHTML = 'Simulate Game <div id="winnerDisplay"></div>';
+        simulateButton.classList.remove('winner-home', 'winner-away', 'winner-tie');
+        });
+
+
+        document.getElementById('editTeams').addEventListener('click', function() {
+            document.getElementById('resultsDisplay').innerHTML = '';
+            document.getElementById('winnerDisplay').innerHTML = '';
+            // Reset the "Simulate Game" button to its initial state
+        const simulateButton = document.getElementById('simulateGame');
+        simulateButton.innerHTML = 'Simulate Game <div id="winnerDisplay"></div>';
+        simulateButton.classList.remove('winner-home', 'winner-away', 'winner-tie');
+        });
+
+
+        function autofillTestData() {
+        // Home team players
+        document.getElementById('player1').value = 'Patrick Beverely';
+        document.getElementById('season1').value = '2022-23';
+        document.getElementById('team1').value = 'LAL';
+
+        document.getElementById('player2').value = 'Anthony Davis';
+
+        document.getElementById('player3').value = 'Kendrick Nunn';
+        document.getElementById('player4').value = 'Austin Reaves';
+        document.getElementById('player5').value = 'Rui Hachimura';
+        // Continue for all home team inputs...
+
+        // Away team players
+        document.getElementById('player6').value = 'Kevin Durant';
+        document.getElementById('season6').value = '2022-23';
+        document.getElementById('team6').value = 'BKN';
+
+        document.getElementById('player7').value = 'Kyrie Irving';
+        document.getElementById('season7').value = '2022-23';
+        document.getElementById('team7').value = 'BKN';
+
+        document.getElementById('player8').value = 'Luka Doncic';
+        document.getElementById('season8').value = '2022-23';
+        document.getElementById('team8').value = 'DAL';
+
+        document.getElementById('player9').value = 'Stephen Curry';
+        document.getElementById('season9').value = '2021-22';
+        document.getElementById('team9').value = 'GSW';
+
+        document.getElementById('player10').value = 'Lebron James';
+        document.getElementById('season10').value = '2022-23';
+        document.getElementById('team10').value = 'LAL';
+        }
+
+    </script>
+
+
+    
+
+
+    
+    
+</body>
