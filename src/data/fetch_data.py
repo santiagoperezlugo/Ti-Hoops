@@ -33,10 +33,6 @@ def fetchGamesForSeason(season, cursor, db_connection):
             winner_team_id = away_team_id
 
         
-        if home_team_id is None or away_team_id is None:
-            print(f"Team ID not found for: home_team {home_team}, away_team {away_team}")
-            continue
-
 
         sql = """
         INSERT INTO games (game_id, game_date, home_team_id, away_team_id, home, away, home_score, away_score, winner_team_id, winner, season)
@@ -53,7 +49,7 @@ def fetchGamesForSeason(season, cursor, db_connection):
         try:
             cursor.execute(sql, game_data)
         except mysql.connector.Error as err:
-            print(f"Failed to insert game {game['GAME_ID']}: {err}")
+            pass
             
     db_connection.commit()
 
@@ -82,7 +78,7 @@ def fetchPlayersforSeason(season, cursor, db_connection):
         try:
             cursor.execute(sql, player_data)
         except mysql.connector.Error as err:
-            print(f"Failed to insert player stats for {player['PLAYER_ID']} in game {player['GAME_ID']}: {err}")
+            pass
 
     db_connection.commit()
 
@@ -99,7 +95,7 @@ def fetchTeamsforSeason(cursor, db_connection):
         try:
             cursor.execute(sql, team_data)
         except mysql.connector.Error as err:
-            print("Failed to insert team {team['id']}: {err}")
+            pass
     print("Teams inserted successfully")
     db_connection.commit()
 
