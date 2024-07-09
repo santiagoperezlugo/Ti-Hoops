@@ -3,7 +3,7 @@
 <img width="1469" alt="Screenshot 2024-07-08 at 7 54 00 PM" src="https://github.com/santiagoperezlugo/Hoops-Analytics/assets/144164736/c8b66fd4-efbf-4990-b2c4-ad0c30ae5c47">
 
 ## Introduction
-This project is designed to analyze NBA game data to predict outcomes and player performances using statistical modeling and machine learning. It utilizes Python for data processing and machine learning, and MySQL for data storage.
+Hoops-Analytics harnesses the power of deep learning to succesfully predict 66% of over 50,000 NBA games correctly, and with an average distance of 8 points from the true score. Built using PyTorch, this platform uses a neural network model which features layers of linear transformations, ReLU activations, batch normalization, and dropout to mitigate overfitting. This allows the model to learn complex patterns and dependencies in 47 years of NBA data, optimizing predictions through an Adam optimizer and SmoothL1Loss for refined accuracy.
 
 ## Prerequisites
 - Python 3.8+
