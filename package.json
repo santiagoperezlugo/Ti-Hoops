@@ -12,11 +12,20 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "author": "Santiago Perez Lugo",
+  "license": "MIT",
   "dependencies": {
     "express": "^4.19.2",
     "Express": "^3.0.1",
     "nodemon": "^3.1.4"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/santiagoperezlugo/Hoops-Analytics.git"
+  },
+  "bugs": {
+    "url": "https://github.com/santiagoperezlugo/Hoops-Analytics/issues"
+  },
+  "homepage": "https://github.com/santiagoperezlugo/Hoops-Analytics#readme"
 }
