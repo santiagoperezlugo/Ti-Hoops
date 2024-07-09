@@ -14,7 +14,7 @@ def train_model(train_data, test_data):
     optimizer = optim.Adam(model_two.parameters(), lr=0.001, weight_decay=0.01)
     criterion = nn.SmoothL1Loss()
 
-    epochs = 70
+    epochs = 30
     for epoch in range(epochs):
         train_correct_predictions = 0
         train_total_predictions = 0

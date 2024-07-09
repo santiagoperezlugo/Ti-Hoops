@@ -1,19 +1,22 @@
-*{
+
+* {
     margin: 0;
     padding: 0;
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
 
-body{
-    background:	#E5E4E2;
+body {
+    background: #E5E4E2;
     color: black;
     text-shadow: 
         -1px -1px 0 black,  
          1px -1px 0 black,
         -1px  1px 0 black,
          1px  1px 0 black;
+    text-align: center;
 }
+
 
 .title{
     margin: auto;
@@ -21,7 +24,7 @@ body{
     text-align: center;
     /* border-style: dotted; */
     font-size: 18px;
-    margin-top: 50px;
+    margin-top: 3vh; 
 }
 @keyframes colorShift_one {
     0%, 100% {
@@ -55,17 +58,21 @@ body{
          3px -3px 0 black,
         -3px  3px 0 black,
          3px  3px 0 black; 
-    font-size: 75px;
     animation: colorShift_one 5s infinite;
     font-family: 'Luckiest Guy', sans-serif;
     font-weight: 500;
+    font-size: calc(3vw + 2vh);
 }
 
 .title .welcome{
     animation: colorShift_two 5s infinite; 
     font-family: 'Luckiest Guy', sans-serif;
-    font-size: 25px;
 }
+
+.title .welcome, .title p {
+    font-size: 1.5vw;
+}
+
 
 .title p{
     font-size: 25px;
@@ -114,6 +121,7 @@ body{
     width: 100%; 
     margin-top: -395px;
     position: relative;
+    flex-wrap: wrap;
 }
 
 .team_one, .team_two {
@@ -177,11 +185,12 @@ body{
     font-weight: 700;
     width: 30%; 
     height: 30px;
-    font-size: 16px; 
-    padding: 10px;
+    font-size: 1.0vw;
+    padding: 0.3vw 0.2vw;
     position: relative;
     border-radius: 5px;
     text-align: center;
+    
 }
 
 .clearAll{
@@ -244,6 +253,12 @@ body{
     }
 }
 
+
+.new_game button, .team_one button, .team_two button, .autofillData {
+    padding: 0.2vw 0.4vw;
+    font-size: 1.0vw;
+}
+
 .submit_button {
     position: relative;  
     display: flex; 
@@ -254,9 +269,9 @@ body{
 
 
 .submit_button button {
+    padding: 1.2vw 1.6vw;
+    font-size: 1.5vw;
     color: white;
-    padding: 20px;
-    font-size: 15px;
     background-color: white;
     border: solid;
     cursor: pointer;
@@ -296,7 +311,7 @@ body{
 #winnerDisplay{
     font-family: 'Luckiest Guy', sans-serif;
     color: white;
-    font-size: 25px; 
+    font-size: 1.3vw;
     font-weight: bold;
     text-align: center;
     text-shadow: 
@@ -340,8 +355,8 @@ body{
 
 .home-score{
     color: #0096FF;
-    font-size: 40;
-    margin-bottom: 130px;
+    font-size: 5.5vw; 
+    margin-bottom: 14vh;
     text-shadow: 
         -2px -2px 0 white,  
          2px -2px 0 white,
@@ -353,7 +368,7 @@ body{
 
 .away-score{
     color:#F88158;
-    font-size: 40;
+    font-size: 5.5vw;
     text-shadow: 
         -2px -2px 0 white,  
          2px -2px 0 white,
@@ -365,22 +380,34 @@ body{
 .new_game{
     text-align: center;
     position: absolute;
-    margin-top: -50px;
-    margin-left: 627px;
+    margin-top: -5vw;
+    margin-left: 42.7vw;
 }
 
 .new_game button{
     font-family: 'Tourney', sans-serif;
-    font-size: 15px;
-    padding: 8px;
-    border-radius: 20px;
+    font-size: 1.0vw;
+    padding: 0.3vw 0.55vw;
+    border-radius: 10px;
     cursor: pointer;
 }
+#autofillData {
+    font-family: 'Tourney', sans-serif;
+    font-size: 1.0vw;
+    padding: 0.3vw 0.55vw;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+#autofillData:hover {
+    background-color: gray;
+}
+
 
 
 .moreInfo{
     font-family: 'Oswald', 'sans-serif';
-    font-size: 15px;
+    font-size: 1.5vw;
     margin-top: 30px;
     text-shadow: none;
     text-align: center;
@@ -403,5 +430,5 @@ body{
     font-size: 20px;
     text-shadow: none;
     text-align: center;
-    margin-top: 10px;
+    margin-top: 1.5vw;
 }

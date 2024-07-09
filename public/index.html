@@ -115,6 +115,7 @@
         <button id="freshStart">Fresh Start</button>
         <button id="editTeams">Edit Teams</button>
     </div>
+    <button id = autofillData onclick="autofillTestData()">Autofill Data</button>
     
 
     <div class = "moreInfo">
@@ -264,6 +265,50 @@
         simulateButton.innerHTML = 'Simulate Game <div id="winnerDisplay"></div>';
         simulateButton.classList.remove('winner-home', 'winner-away', 'winner-tie');
         });
+
+
+        function autofillTestData() {
+        // Home team players
+        document.getElementById('player6').value = 'Patrick Beverley';
+        document.getElementById('season6').value = '2022-23';
+        document.getElementById('team6').value = 'LAL';
+
+        document.getElementById('player7').value = 'Thomas Bryant';
+        document.getElementById('season7').value = '2022-23';
+        document.getElementById('team7').value = 'LAL';
+
+        document.getElementById('player8').value = 'Kendrick Nunn';
+        document.getElementById('season8').value = '2022-23';
+        document.getElementById('team8').value = 'LAL';
+        document.getElementById('player9').value = 'Austin Reaves';
+        document.getElementById('season9').value = '2022-23';
+        document.getElementById('team9').value = 'LAL';
+        document.getElementById('player10').value = 'Rui Hachimura';
+        document.getElementById('season10').value = '2022-23';
+        document.getElementById('team10').value = 'LAL';
+        // Continue for all home team inputs...
+
+        // Away team players
+        document.getElementById('player1').value = 'Domantas Sabonis';
+        document.getElementById('season1').value = '2022-23';
+        document.getElementById('team1').value = 'SAC';
+
+        document.getElementById('player2').value = 'Evan Mobley';
+        document.getElementById('season2').value = '2022-23';
+        document.getElementById('team2').value = 'CLE';
+
+        document.getElementById('player3').value = 'Alex Caruso';
+        document.getElementById('season3').value = '2022-23';
+        document.getElementById('team3').value = 'CHI';
+
+        document.getElementById('player4').value = 'Mitchell Robinson';
+        document.getElementById('season4').value = '2022-23';
+        document.getElementById('team4').value = 'NYK';
+
+        document.getElementById('player5').value = 'Lebron James';
+        document.getElementById('season5').value = '2022-23';
+        document.getElementById('team5').value = 'LAL';
+        }
 
     </script>
 
