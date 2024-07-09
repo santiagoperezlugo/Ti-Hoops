@@ -54,6 +54,24 @@ Copy and paste the link in the terminal, should be:
 
 Play around with the website, seeing the different scores the AI predicts!
 
+## Features
+
+Hoops-Analytics offers a range of features designed to enhance your NBA game analysis:
+
+- **Predictive Modeling**: Utilizes advanced machine learning algorithms to predict game outcomes and player performance metrics.
+- **Data Insights**: Dive deep into NBA game statistics to uncover trends and patterns that are not immediately obvious.
+- **User-Friendly Interface**: Interact with the analytics through a simple web interface, making complex data more accessible.
+- **Customizable Queries**: Users can specify any player from 47 years of data!
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## Contact
+For questions or feedback, please reach out to perezlugosantiago@gmail.com.
+
+## Enhanced Documentation**:
+nba_api link: `https://github.com/swar/nba_api`
 
 
 
