@@ -115,7 +115,6 @@
         <button id="freshStart">Fresh Start</button>
         <button id="editTeams">Edit Teams</button>
     </div>
-    <button onclick="autofillTestData()">Autofill Test Data</button>
     
 
     <div class = "moreInfo">
@@ -265,42 +264,6 @@
         simulateButton.innerHTML = 'Simulate Game <div id="winnerDisplay"></div>';
         simulateButton.classList.remove('winner-home', 'winner-away', 'winner-tie');
         });
-
-
-        function autofillTestData() {
-        // Home team players
-        document.getElementById('player1').value = 'Patrick Beverely';
-        document.getElementById('season1').value = '2022-23';
-        document.getElementById('team1').value = 'LAL';
-
-        document.getElementById('player2').value = 'Anthony Davis';
-
-        document.getElementById('player3').value = 'Kendrick Nunn';
-        document.getElementById('player4').value = 'Austin Reaves';
-        document.getElementById('player5').value = 'Rui Hachimura';
-        // Continue for all home team inputs...
-
-        // Away team players
-        document.getElementById('player6').value = 'Kevin Durant';
-        document.getElementById('season6').value = '2022-23';
-        document.getElementById('team6').value = 'BKN';
-
-        document.getElementById('player7').value = 'Kyrie Irving';
-        document.getElementById('season7').value = '2022-23';
-        document.getElementById('team7').value = 'BKN';
-
-        document.getElementById('player8').value = 'Luka Doncic';
-        document.getElementById('season8').value = '2022-23';
-        document.getElementById('team8').value = 'DAL';
-
-        document.getElementById('player9').value = 'Stephen Curry';
-        document.getElementById('season9').value = '2021-22';
-        document.getElementById('team9').value = 'GSW';
-
-        document.getElementById('player10').value = 'Lebron James';
-        document.getElementById('season10').value = '2022-23';
-        document.getElementById('team10').value = 'LAL';
-        }
 
     </script>
 
