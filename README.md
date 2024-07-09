@@ -28,15 +28,9 @@ export DB_NAME="nba_data"
 ```
 ### Training the Model
 
-To train the model, follow these steps:
-
-a. Navigate to the src directory:
+To train the model, run
 ```bash
-cd src
-```
-b. Run the training program
-```bash
-python main.py
+python src/main.py
 ```
 
 ## Example Terminal Output: 
@@ -45,9 +39,13 @@ python main.py
 
 ### Usage
 
+Load the dependencies: 
+```bash
+npm install
+```
 Open the remote server:
 ```bash
-node server.js
+npm start
 ```
 Copy and paste the link in the terminal, should be:
 `http://localhost:3000`
