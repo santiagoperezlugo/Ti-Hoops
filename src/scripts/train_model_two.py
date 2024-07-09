@@ -61,13 +61,13 @@ def train_model(train_data, test_data):
         if epoch % 1 == 0:
             print(f'Epoch: {epoch}, Train Accuracy: {train_accuracy:.2f}%, Train Loss: {average_train_loss:.3f}, Test Loss: {average_test_loss:.3f}, Test Accuracy: {test_accuracy:.2f}%')
 
-#     # MODEL_PATH = Path("saved_models") 
-#     # MODEL_PATH.mkdir(parents=True, exist_ok=True)
+    MODEL_PATH = Path("saved_models") 
+    MODEL_PATH.mkdir(parents=True, exist_ok=True)
 
-#     # MODEL_NAME = "model_two.pth"
-#     # MODEL_SAVE_PATH = MODEL_PATH / MODEL_NAME
-# 
-#     # print(f"Saving model to: {MODEL_SAVE_PATH}")
-#     # torch.save(model_two.state_dict(), MODEL_SAVE_PATH) 
+    MODEL_NAME = "model_two.pth"
+    MODEL_SAVE_PATH = MODEL_PATH / MODEL_NAME
+
+    print(f"Saving model to: {MODEL_SAVE_PATH}")
+    torch.save(model_two.state_dict(), MODEL_SAVE_PATH) 
 
 

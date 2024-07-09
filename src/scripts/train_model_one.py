@@ -12,9 +12,6 @@ from pathlib import Path
 
 #PROTOTYPE MODEL ONE
 
-
-
-
 # Load data
 test_data, train_data = pd.finalizeTensors()
 
