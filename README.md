@@ -12,7 +12,7 @@ This project is designed to analyze NBA game data to predict outcomes and player
 
 ### Installation
 
-a. git clone "repo"
+a . git clone <repository-url>
 
 b. `pip3 install -r requirements.txt`
 
@@ -43,7 +43,18 @@ python main.py
 
 <img width="663" alt="Screenshot 2024-07-08 at 7 39 51 PM" src="https://github.com/santiagoperezlugo/Hoops-Analytics/assets/144164736/af358bc8-16e7-40bd-9b11-773c05162163">
 
-## Introduction
-This project is designed to analyze NBA game data to predict outcomes and player performances using statistical modeling and machine learning. It utilizes Python for data processing and machine learning, and MySQL for data storage.
+### Usage
+
+Open the remote server:
+```bash
+node server.js
+```
+Copy and paste the link in the terminal, should be:
+`http://localhost:3000`
+
+Play around with the website, seeing the different scores the AI predicts!
+
+
+
 
 
