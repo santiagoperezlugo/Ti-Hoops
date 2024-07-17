@@ -12,19 +12,22 @@ Hoops-Analytics harnesses the power of deep learning to succesfully predict 66% 
 
 ### Installation
 
-a . git clone <repository-url>
+a . git clone https://github.com/santiagoperezlugo/Ti-Hoops.git
 
-b. `pip3 install -r requirements.txt`
+b. 
+```bash
+pip3 install -r requirements.txt
+```
 
 ### Set Environment Variables in Your Session:
 ```bash
-export DB_HOST='127.0.0.1'
+export HOST='127.0.0.1'
 
-export DB_USER="root"
+export USER="root"
 
-export DB_PASSWORD="your_password"
+export PASSWORD="your_password"
 
-export DB_NAME="nba_data"
+export NAME="nba_data"
 ```
 ### Training the Model
 
