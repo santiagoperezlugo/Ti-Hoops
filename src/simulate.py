@@ -1,7 +1,6 @@
 import torch
 import sys
-sys.path.append('/Users/santi/Desktop/Hoops-Analytics') 
-from model import model_two as md  # Import your model definition
+from model import model_two as md
 from main import connect_to_db
 from data import load_data as ld
 from sklearn.preprocessing import StandardScaler
@@ -157,6 +156,7 @@ def main():
 
         db_connection = connect_to_db()
         cursor = db_connection.cursor()
+        cursor.execute("SET SESSION sql_mode=(SELECT REPLACE(@@sql_mode,'ONLY_FULL_GROUP_BY',''));")
 
         errors = prepare_team_data(cursor, team_one_dict, 0)
         errors.extend(prepare_team_data(cursor, team_two_dict, 1))

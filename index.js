@@ -3,7 +3,7 @@ const path = require('path');
 const { spawn } = require('child_process'); 
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -42,6 +42,7 @@ app.post('/simulate', (req, res) => {
     let dataToSend = '';
     pythonProcess.stdout.on('data', (data) => {
         console.log('Pipe data from python script ...');
+        console.log(data.toString());  // Log raw data
         dataToSend += data.toString();
     });
 
@@ -51,7 +52,6 @@ app.post('/simulate', (req, res) => {
     });
 
     pythonProcess.on('close', (code) => {
-        console.log('Python error', code);
         try {
             const parsedData = JSON.parse(dataToSend);
             if (parsedData.success) {
