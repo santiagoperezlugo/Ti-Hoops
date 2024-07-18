@@ -8,11 +8,13 @@ Hoops-Analytics harnesses the power of deep learning to succesfully predict 66% 
 ## Prerequisites
 - Python 3.8+
 - MySQL Server
-- Python libraries: `mysql.connector`, `pandas`, `numpy`, `nba_api`
 
 ### Installation
 
-a . git clone https://github.com/santiagoperezlugo/Ti-Hoops.git
+a 
+```bash
+git clone https://github.com/santiagoperezlugo/Ti-Hoops.git
+```
 
 b. 
 ```bash
