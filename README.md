@@ -66,6 +66,41 @@ Hoops-Analytics offers a range of features designed to enhance your NBA game ana
 - **User-Friendly Interface**: Interact with the analytics through a simple web interface, making complex data more accessible.
 - **Customizable Queries**: Users can specify any player from 47 years of data!
 
+## Directory
+```bash
+├── public                   # Web assets and static files
+│   ├── css                  
+│   │   └── index.css        # Main stylesheet
+│   ├── images               
+│   │   └── basketball_court.jpeg 
+│   └── index.html           # Entry point HTML file
+├── saved_models             # Stores trained model files
+│   ├── model_one.pth        
+│   └── model_two.pth        
+├── src                      
+│   ├── config               
+│   │   └── sql_setup.py     # SQL database setup script
+│   ├── data                 # Scripts to handle data manipulation and loading
+│   │   ├── __init__.py      
+│   │   ├── convert_data.py  # Converts data formats for model consumption
+│   │   ├── fetch_data.py    # Fetches data from external sources or APIs
+│   │   └── load_data.py     # Loads data into the application or database
+│   ├── model                
+│   │   ├── model_one.py     # Defines first machine learning model
+│   │   └── model_two.py     # Defines second machine learning model
+│   └── scripts             
+│       ├── __init__.py      
+│       ├── train_model_one.py # Script to train first model
+│       ├── train_model_two.py # Script to train second model
+│       └── main.py          # Main script to populate database and train model
+├── .gitignore               
+├── index.js                 # Main JavaScript file for Node.js server
+├── LICENSE                  
+├── package-lock.json        #
+├── package.json             # Node.js manifest file, defines project dependencies
+└── simulate.py              # Script called by index.js for custom simulations
+```
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
