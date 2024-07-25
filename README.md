@@ -5,6 +5,12 @@
 ## Introduction
 Hoops-Analytics harnesses the power of deep learning to succesfully predict 66% of over 50,000 NBA games correctly, and with an average distance of 8 points from the true score. Built using PyTorch, this platform uses a neural network model which features layers of linear transformations, ReLU activations, batch normalization, and dropout to mitigate overfitting. This allows the model to learn complex patterns and dependencies in 47 years of NBA data, optimizing predictions through an Adam optimizer and SmoothL1Loss for refined accuracy.
 
+
+# To Play
+[ti-hoops.com](http://ti-hoops.com)
+
+# To Build:
+
 ## Prerequisites
 - Python 3.8+
 - MySQL Server
